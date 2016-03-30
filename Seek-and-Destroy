@@ -1,6 +1,7 @@
 /*
 note: be careful about using arguments - check exactly what arguments is actually referring to when using callbacks and anonymous functions.
- - the args value has to be bound to this so it can be used inside the callback - refer to Array.filter MDN
+ - the args value has to be bound to THIS so it can be used inside the callback - refer to Array.filter MDN
+ - note that THIS can be called with array notation: this[x]
  */
 
 function destroyer(arr) {
