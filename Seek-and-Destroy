@@ -1,0 +1,23 @@
+/*
+note: be careful about using arguments - check exactly what arguments is actually referring to when using callbacks and anonymous functions.
+ - the args value has to be bound to this so it can be used inside the callback - refer to Array.filter MDN
+ */
+
+function destroyer(arr) {
+  // Remove all the values
+  var newArray = [];
+  var args = arguments;
+  newArray = arguments[0].filter(function (element) {
+    
+    for (var i = 1; i < this.length; i++) {
+      if (element === this[i]) {
+        console.log("this is true");
+        return false;
+      }
+    }
+    return true;
+  }, args);
+  return newArray;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
