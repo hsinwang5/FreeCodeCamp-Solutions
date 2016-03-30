@@ -1,6 +1,7 @@
 /*
 note: be careful about using arguments - check exactly what arguments is actually referring to when using callbacks and anonymous functions.
- - the args value has to be bound to THIS so it can be used inside the callback - refer to Array.filter MDN
+ - the args value can be bound to THIS so it can be used inside the callback - refer to Array.filter MDN (not actually useful here, could just use args directly,
+ but just a reminder that the feature exists)
  - note that THIS can be called with array notation: this[x]
  */
 
