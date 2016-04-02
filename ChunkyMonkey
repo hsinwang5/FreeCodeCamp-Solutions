@@ -1,0 +1,18 @@
+function chunkArrayInGroups(arr, size) {
+  var newArr = [];
+  var iterate; //number of sub-arrays to make
+  var counter = 0; //tracks where arr.slice should begin
+  //If size leaves a remainder, then round iterate up for overflow
+  if (Number.isInteger(arr.length/size)) {
+    iterate = arr.length/size;
+  } else {
+    iterate = Math.ceil(arr.length/size);
+  }
+  for (var i = 0; i < iterate; i++) {
+    newArr.push(arr.slice(counter, counter + size));
+    counter = counter + size;
+  }
+  return newArr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
