@@ -1,0 +1,36 @@
+//Someone posted asking for help for SCM problem, turns out he was using recursion to solve it which was putting too many
+//function calls on the stack. I refactored the code into an iterative solution, displayed below, which solved the problem. 
+//From this, we can gather that Javascript is bad at handling large recursive calls, so they should be avoided for 
+//solutions that require many iterations.
+
+function smallestCommons(arr) {
+  arr.sort(function(a,b){
+    return a-b;
+  }); // sort arr ascending.
+
+  var allNums = [];
+  var firstScm = arr[1];
+  var scmFound = "false";
+
+  for (i = arr[0]; i <= arr[1]; i++) {
+    allNums.push(i);
+  } // get all nums between the 2 indexes.
+
+while (scmFound.indexOf("false") >= 0) {
+     firstScm++;
+      scmFound = "";
+
+allNums.forEach(function(int) {
+      if (firstScm % int === 0) {
+        scmFound += "true";
+      } else {
+        scmFound += "false";
+      }
+    }); 
+
+    }
+  return firstScm;
+
+}
+
+smallestCommons([13,1]);
